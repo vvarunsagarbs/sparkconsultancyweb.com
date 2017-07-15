@@ -1,0 +1,304 @@
+/*-------------------------------------------------------------*/
+/*Typography*/
+/*-------------------------------------------------------------*/
+.div-header {
+  margin-top: 20px;
+  padding: 30px;
+  text-align:center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #CBCBCB;
+}
+
+.center {
+  text-align:center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.white {
+  color:white;
+}
+
+.footerColor {
+  color: #ABABAB;
+}
+
+#heading-text {
+  padding: 0px 10px 10px 10px;
+  text-align:left;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+p, a, span, li,div {
+  font-family: verdana;
+}
+
+
+/*------------------------------------------------------------------*/
+/*NavBar*/
+/*------------------------------------------------------------------*/
+ul#socialNavBar {
+  padding: 5px 0px 0px 0px;
+}
+
+ul#socialNavBar li{
+  display: inline;
+  padding:5px 10px 0px 10px;
+}
+
+.myTopNavBar {
+  background-color:white;
+  height:110px;
+  box-shadow: 0px 4px 8px #F8F8F8;
+}
+
+/*TopNavBarMenu*/
+ul#myTopNavBarMenu {
+  padding:10px;
+}
+ul#myTopNavBarMenu li{
+  display:inline;
+  padding:3px 21px 10px 20px;
+  border-radius: 5px;
+  font-weight:bold;
+}
+ul#myTopNavBarMenu li:hover{
+  color: #2196F3;
+  border-bottom:2px solid #2196F3;
+}
+ul#myTopNavBarMenu a{
+  font-weight:bold;
+  color: black;
+}
+ul#myTopNavBarMenu a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.serviceSubmenu {
+  background-color:white;
+  z-index:11;
+}
+
+#mobileMenuIcon {
+    font-size: 30px;
+    border: 1px solid #2196F3;
+    border-radius: 5px;
+    padding: 5px;
+    background-color:#2196F3;
+    color:white;
+}
+
+.mobileMenu {
+  text-align: center;
+}
+
+ul#navSubmenu {
+  list-style-type:none;
+  background-color: white;
+  padding: 0px;
+}
+
+ul#navSubmenu li {
+  padding: 5px 5px 5px 10px;
+  text-decoration: none;
+
+}
+
+ul#navSubmenu a li{
+  color: black;
+  font-size: 12px;
+}
+
+ul#navSubmenu a li:hover{
+  color: white;
+  text-decoration: none;
+  background-color: #2196F3;
+}
+
+ul#navSubmenu a:hover{
+  text-decoration: none;
+  color:white;
+}
+
+@media only screen and (max-width: 745px) {
+  .hideInMobileScreen {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 745px) {
+  .showInMobileScreen {
+    display: none;
+  }
+}
+#scrollToTop {
+  position:fixed;
+  background-color:white;
+  padding:8px 10px 8px 10px;
+  right:10px;
+  bottom:5px;
+  box-shadow:0px 2px 4px grey;
+  z-index:6;
+}
+#scrollToBottom {
+  position:fixed;
+  background-color:white;
+  padding:8px 10px 8px 10px;
+  right:10px;
+  top:115px;
+  box-shadow:0px 2px 4px grey;
+  z-index:6;
+}
+/*-------------------------------------------------------------------
+Home
+-------------------------------------------------------------------*/
+.homeSlider {
+  width:100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .homeSlider {
+      width:100%;
+      height: 420px;
+  }
+}
+
+/*------------------------------------------------------------------
+Product and Services
+------------------------------------------------------------------*/
+
+#serviceItemDetailHead {
+  font-size: 17px;
+  margin: 15px 0px 10px 0px;
+  color:black;
+}
+
+#serviceItemDetailButton {
+  padding: 10px;
+  border: 1px solid #2196F3;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#industriesScroller{
+  width:100%;
+  height:300px;
+}
+
+/*---------------------------------------------------*/
+ /*Jobs*/
+ /*---------------------------------------------------*/
+
+#jobs {
+  background-color: #F8F8F8;
+}
+
+
+/*---------------------------------------------------*/
+ /*Contact US*/
+ /*---------------------------------------------------*/
+
+#contact-us {
+  background-color: #fff;
+}
+#contact-form-inputs {
+  border:1px solid #DDDDDD;
+  padding: 10px 20px 10px 20px;
+  font-size: 18px;
+  color: black;
+  width:100%;
+}
+
+#contact-form-inputs:focus {
+  border-color: #2196F3;
+}
+
+#contactFormSubmitButton {
+    margin:12px;
+    padding: 10px 20px 10px 20px;
+    border:1px solid #2196F3;
+    color:white;
+    background-color: #2196F3;
+    border-radius: 20px;
+}
+
+#contactFormSubmitButton:hover {
+    background-color: white;
+    border:1px solid #2196F3;
+    color:#2196F3;
+}
+
+#contactFormIcons {
+    color: #2196F3;
+}
+
+#requirement-form-inputs {
+  border:1px solid #DDDDDD;
+  padding: 10px 20px 10px 20px;
+  font-size: 18px;
+  color: black;
+  width:100%;
+}
+
+#requirement-form-inputs:focus {
+  border-color: #2196F3;
+}
+
+#postRequirementFormSubmitButton {
+    margin:12px;
+    padding: 10px 20px 10px 20px;
+    border:1px solid #2196F3;
+    color:white;
+    background-color: #2196F3;
+    border-radius: 20px;
+}
+
+#postRequirementFormSubmitButton:hover {
+    background-color: white;
+    border:1px solid #2196F3;
+    color:#2196F3;
+}
+/*--------------------------------------------------------------
+QuickNav
+--------------------------------------------------------------*/
+#QuickNav li{
+  padding: 10px;
+  display:inline;
+}
+#QuickNav li a{
+  color:black;
+}
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+#footer {
+  background-color: #1D1D1D;
+  text-align:center;
+  color: #ABABAB;
+  padding:50px 50px 0px 50px;
+}
+ul#footerSocialMediaIcons li{
+  display: inline;
+  padding:10px;
+}
+ul#footerSocialMediaIcons li a i{
+  font-size: 30px;
+}
+#footerInformationContent {
+  padding: 10px;
+  color: #ABABAB;
+}
+#footerInformationContent:hover {
+  text-decoration: none;
+  padding: 15px;
+}

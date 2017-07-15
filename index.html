@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+
+      <title>Spark Consultancy Services</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
+      <link rel="icon" href="img/logo.jpg" type="image/x-icon">
+
+      <!-- JQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!-- /JQuery -->
+
+      <!-- Bootstrap  -->
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!-- /Bootstrap  -->
+
+      <!-- Font Awesome -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- /Font Awesome -->
+
+      <!-- MDL Icons-->
+       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+       <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+       <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <!-- /MDL Icons-->
+    <!-- /CDN -->
+
+    <!-- Self Hosted -->
+    <script src="lib/angular.min.js"></script>
+      <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/style.min.css"> -->
+
+      <!-- Custom JS -->
+        <!-- <script src="js/app.min.js"></script> -->
+        <script src="js/app.js"></script>
+        <script src="js/script.js"></script>
+    <!-- /Self Hosted -->
+    <script>
+	    var shiftWindow = function() { scrollBy(0, -80) };
+	    window.addEventListener("hashchange", shiftWindow);
+	    function load() { if (window.location.hash) shiftWindow(); }
+	  </script>
+  </head>
+  <body data-ng-app="manPower" data-ng-controller="HomeController">
+    <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.9";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Navbar -->
+    <div class="container-fluid" style="width:100%;position:fixed;z-index:10;">
+      <div class="row">
+        <div class="myTopNavBar">
+          <div class="col-md-2 col-sm-4 col-xs-4" style="text-align:center;">
+            <img src="img/logo.jpg" alt="Brume Solutions" style="width:75%;height:110px;"/>
+          </div>
+          <div class="col-md-6 col-md-offset-4 col-sm-8 col-xs-8" style="text-align:right;">
+            <div class="row" style="padding:0px;">
+              <div class="col-md-3" style="float:right;">
+                <ul id="socialNavBar">
+                  <li class="item"><a href="https://www.facebook.com/brumesolutions/" target="blank"><i class="fa fa-facebook" style="color:#4867AA"></i></a></li>
+                  <li class="item"><a href="https://in.linkedin.com/in/brume-solutions-a1999a128" target="blank"><i class="fa fa-linkedin" style="color:#0077B5"></i></a></li>
+                  <li class="item"><a href="#" target="blank"><i class="fa fa-google-plus" style="color:#D94835"></i></a></li>
+                </ul>
+                <hr style="margin:0px;">
+              </div>
+            </div>
+            <div class="row">
+              <div class="showInMobileScreen" style="padding:5px 15px 0px 5px;" data-ng-click="toggleMobileMenu()"><i class="material-icons" id="mobileMenuIcon">menu</i></div>
+              <ul id="myTopNavBarMenu" class="hideInMobileScreen">
+                <a href="#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
+                <a href="#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>OUR SERVICES</li></a>
+                <a href="#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>CONTACT US</li></a>
+              </ul>
+            </div>
+            <!-- services Sub Menu -->
+            <div class="row" style="text-align:left;">
+              <div class="serviceSubmenu col-md-5 col-md-offset-6" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
+                <ul id="navSubmenu">
+                  <a href="services.html"><li ng-click="setActiveServicesTab('staffing')">STAFFING SOLUTION</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('facility')">FACILITY MANAGEMENT SERVICES</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('realEstate')">REAL ESTATE CONSULTANT</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('events')">EVENT MANAGEMENT SERVICES</li></a>
+                </ul>
+              </div>
+            </div>
+            <!-- /services Sub Menu -->
+          </div>
+        </div>
+        <div class="center" data-ng-show="mobileMenu=='active'">
+          <ul id="navSubmenu">
+            <a href="index.html#" ng-click="toggleMobileMenu()"><li>HOME</li></a>
+            <a href="index.html#services" ng-click="toggleMobileMenu()"><li>SERVICES</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('staffing')">STAFFING SOLUTION</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('facility')">FACILITY MANAGEMENT SERVICES</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('realEstate')">REAL ESTATE CONSULTANT</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('events')">EVENT MANAGEMENT SERVICES</li></a>
+            <a href="index.html#contact-us" ng-click="toggleMobileMenu()"><li>CONTACT US</li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /Navbar -->
+
+    <!-- Overlapse the Fixed navbar -->
+    <div style="height:100px;background-color:white;"></div>
+    <!-- /Overlapse the Fixed navbar -->
+    <!-- Home Slider -->
+      <iframe class="homeSlider" frameborder="0" style="border:0" src="lib/slider/standard.html" allowfullscreen data-ng-mouseover="viewServiceSubmenu='false'"></iframe>
+    <!-- /Home Slider -->
+
+    <!-- Services -->
+    <div id="services" style="padding:50px 0px 50px 0px;background: url('img/bg.jpg'); background-size:cover;" data-ng-mouseover="viewServiceSubmenu='false'">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 div-header" style="color:white"> OUR SERVICES</div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+            <div class="row" style="background-color:white;" ng-mouseleave="setActiveServiceSwtichView('default')">
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="row" style="background-color:#2196F3">
+                  <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4" style="border-bottom:1px solid white;background-color:white;padding:10px;" ng-mouseover="setActiveServiceSwtichView('staffing')">
+                    <img src="img/services/1.jpg" alt="Staffing Solutions" style="border-radius:50%;width:100%;height:150px;" ng-hide="activeServiceSwtichView == 'staffing'"/>
+                    <a href="services.html"><div style="height:150px;background-color:#2196F3;border-radius:50%;padding:50px;text-align:center;color:white;" ng-show="activeServiceSwtichView == 'staffing'" ng-click="setActiveServicesTab('staffing')"> LEARN MORE </div></a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-sm-4 col-xs-4" style="border-right:1px solid white;padding:10px;" ng-mouseover="setActiveServiceSwtichView('facility')">
+                    <img src="img/services/2.jpg" alt="Facility Management Services" style="border-radius:50%;width:100%;height:150px;" ng-hide="activeServiceSwtichView == 'facility'"/>
+                    <a href="services.html"><div style="height:150px;background-color:#2196F3;border-radius:50%;padding:50px;text-align:center;color:white;" ng-show="activeServiceSwtichView == 'facility'" ng-click="setActiveServicesTab('facility')"> LEARN MORE </div></a>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4" style="background-color:#2196F3;color:white;padding:40px;">
+                    <b>Spark Consultancy Solutions</b><br><i>Hover Over the Images to know more.</i>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4" style="border-left:1px solid white;padding:10px;" ng-mouseover="setActiveServiceSwtichView('realEstate')">
+                    <img src="img/services/3.jpg" alt="Real Estate Consultant" style="border-radius:50%;width:100%;height:150px;" ng-hide="activeServiceSwtichView == 'realEstate'"/>
+                    <a href="services.html"><div style="height:150px;background-color:#2196F3;border-radius:50%;padding:50px;text-align:center;color:white;" ng-show="activeServiceSwtichView == 'realEstate'" ng-click="setActiveServicesTab('realEstate')"> LEARN MORE </div></a>
+                  </div>
+                </div>
+                <div class="row" style="background-color:#2196F3;">
+                  <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4" style="background-color:white;border-top:1px solid white;padding:10px;" ng-mouseover="setActiveServiceSwtichView('events')">
+                    <img src="img/services/4.jpg" alt="Event Management System" style="border-radius:50%;width:100%;height:150px;" ng-hide="activeServiceSwtichView == 'events'"/>
+                    <a href="services.html"><div style="height:150px;background-color:#2196F3;border-radius:50%;padding:50px;text-align:center;color:white;" ng-show="activeServiceSwtichView == 'events'" ng-click="setActiveServicesTab('events')"> LEARN MORE </div></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 hideInMobileScreen" style="padding:10px 20px 10px 20px;background-color:#2196F3;">
+                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'default'">
+                  <p><b>Spark Consultancy Services</b></p>
+                  <p>Spark Consultancy, recruit new talent for open positions in the workforce also provide a wide range of Recruitment Solutions for various requirements. Team of Spark Consultancy is expertise in respected fields. With an experience of serving industries like Manufacturing Industries, Pharmaceutical Industries, IT Industries, Insurance, Facility management etc,..</p>
+                </div>
+                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'staffing'">
+                  <p><b>Staffing Solutions</b></p>
+                  <p>Get all manpower at one place for your business and fill your organization with full of talent who help in growing your organization to the next level</p>
+                </div>
+                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'facility'">
+                  <p><b>Facility Management Services</b></p>
+                  <p>Need people for housekeeping or managing other utilities for your organization ? Spark Consultancy help you bring them in no time.</p>
+                  <p>Our Facility Management Services include:</p>
+                  <ul>
+                    <li>Painting</li>
+                    <li>Masonry/civil</li>
+                    <li>Carpentry</li>
+                    <li>Plumbing</li>
+                    <li>Polishing</li>
+                    <li>Electrical repairs</li>
+                    <li>Tiles fixing</li>
+                    <li>Water proofing</li>
+                  </ul>
+                </div>
+                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'realEstate'">
+                  <p><b>Real Estate Consultant</b></p>
+                  <p>Backed by a skilled team of professionals, we offer comprehensive Real Estate Solutions to the clients all over the nation. Being a trusted Real Estate Consultant, we specialize in serving the clients with Buying Property, Selling Property, Leasing Property, and Renting Property.</p>
+                  <p>Be it Commercial or Residential Property, we can help the clients with suitable solutions. Working as a mediator, we assist the clients with the premium solutions and offer them the offer that best caters their requirements.</p>
+                </div>
+                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'events'">
+                  <p><b>Event Management Services</b></p>
+                  <p>Need resources to manage events like cultural, IT, business seminars or Bollywood. Spark consultancy help you providing hustle free management in your budget.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 div-header" style="background-color:white;color:black;"> Industries We Serve</div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" style="background-color:white;padding:10px;">
+            <iframe class="industriesScroller" height="180px;" frameborder="0" style="border:0" src="lib/slider0/standard.html" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Services -->
+
+    <!-- JobsPreview -->
+    <div id="jobs" style="padding:50px 0px 50px 0px;" data-ng-mouseover="viewServiceSubmenu='false'">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-xs-12 showInMobileScreen">
+            <div class="col-sm-4 col-xs-4">
+              <a href="jobs.html"><img src="img/currentopenings2.png" alt="Current Jobs" /></a>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <a href="jobs.html"><img src="img/postresume2.png" alt="Post Skills" /></a>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <a href="services.html"><img src="img/employersection2.png" alt="Post Requirement" /></a>
+            </div>
+          </div>
+          <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+            <div class="col-md-4 hideInMobileScreen center">
+              <div class="row" style="padding:10px;">
+                <a href="jobs.html"><img src="img/currentopenings2.png" alt="Current Jobs" /></a>
+              </div>
+              <div class="row" style="padding:10px;">
+                <a href="jobs.html"><img src="img/postresume2.png" alt="Post Skills" /></a>
+              </div>
+              <div class="row" style="padding:10px;">
+                <a href="services.html"><img src="img/employersection2.png" alt="Post Requirement" /></a>
+              </div>
+            </div>
+            <div class="col-md-8" style="padding:5px 5px 5px 5px;box-shadow:0px 2px 4px grey;background-color:white;">
+              <div class="container-fluid">
+                <div class="row" style="height:420px;">
+                  <h5 style="text-align:center;">FEATURE JOBS</h5>
+                  <hr style="border-color:#0077B5">
+                  <marquee direction="up" scrolldelay="100" height="340">
+                    <div class="container-fluid">
+                      <div ng-repeat="featureJob in FeaturesJobs" style="padding:0px 30px 0px 30px;">
+                        <div class="row">
+                          <div class="col-md-2">
+                            <img src="img/comingsoon.jpg" style="width:100%"/>
+                          </div>
+                          <div class="col-md-10">
+                            <p><span><b>{{featureJob.title}}, </b></span>({{featureJob.exp}}) Yrs - {{featureJob.city}}</p>
+                          </div>
+                          <hr style="border-color:grey;">
+                        </div>
+                      </div>
+                    </div>
+                  </marquee>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /JobsPreview -->
+
+    <!-- Contact Us -->
+    <div id="contact-us" style="background: url('img/bg1.jpg'); background-size:cover;" data-ng-mouseover="viewServiceSubmenu='false'">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" style="padding:10px;">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1 div-header" style="color:white">CONTACT US</div>
+            </div>
+            <div class="row" style="padding:10px;">
+              <div class="col-md-6 col-sm-12 col-xs-12">
+                <!-- Google Maps -->
+                <iframe class="hideInMobileScreen" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Sanpada%2C%20Sector%2013%2C%20Navi%20Mumbai%2C%20Maharashtra%2C%20India&key=AIzaSyCFcywxqQCSP_xedCNJiRQRsPUqt_viJ8I" allowfullscreen></iframe>
+                <!-- Google Maps -->
+              </div>
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:0px 20px 0px 20px;background-color:rgba(255,255,255,0.8);">
+              <div class="row">
+                <p id="heading-text" style="text-align:center;">GET IN TOUCH</p>
+                <form name="contactForm">
+                  <div class="alert alert-success" ng-show="enquiryResponse.data.status=='S'">
+                    <strong>Success!</strong> Your message has been received successfully, please check your inbox for confirmation mail.
+                  </div>
+                  <div class="alert alert-danger" ng-show="enquiryResponse.data.status=='N'">
+                    <strong>Sorry!</strong> Some Error Occured, Please Try Again!
+                  </div>
+                  <div class="row" style="padding:10px;">
+                    <div class="col-md-6" style="padding:10px;">
+                      <input id="contact-form-inputs" type="text" ng-model="contactForm.name" placeholder="Name" required>
+                    </div>
+                    <div class="col-md-6" style="padding:10px;">
+                      <input id="contact-form-inputs" type="text" ng-model="contactForm.email" placeholder="Email" required>
+                    </div>
+                  </div>
+                  <div class="row" style="padding:5px;">
+                    <div class="col-md-12">
+                      <textarea id="contact-form-inputs" rows="3" style="width:100%;" ng-model="contactForm.message" placeholder="Message" required></textarea>
+                    </div>
+                  </div>
+                  <div class="row" style="padding:10px;text-align:right">
+                    <button id="contactFormSubmitButton" ng-click="addNewEnquiry(contactForm)">Send Message</button>
+                  </div>
+                </form>
+              </div>
+              <div class="row hideInMobileScreen" style="padding:5px 15px 5px 15px;">
+                <div class="row" style="padding:5px;">
+                  <div class="col-md-2 col-sm-2 col-xs-2 center">
+                    <i class="material-icons" id="contactFormIcons">place</i>
+                  </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                    Shop No. 07, Ground Floor, 1:1, <br />Hare Krishna CHS Ltd., Sector-13, <br/> Sanpada, Navi Mumbai, India
+                  </div>
+                </div>
+                <div class="row" style="padding:5px;">
+                  <div class="col-md-2 col-sm-2 col-xs-2 center">
+                    <i class="material-icons" id="contactFormIcons">call</i>
+                  </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                    S.Choudhary, (+91) 8454034443 <br />
+                    I. Mukherjee, (+91) 9699008987
+                  </div>
+                </div>
+                <!-- <div class="row" style="padding:5px;">
+                  <div class="col-md-2 col-sm-2 col-xs-2 center">
+                    <i class="material-icons" id="contactFormIcons">email</i>
+                  </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                    support@manpower.com
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            </div>
+            <div class="row showInMobileScreen" style="padding:10px;">
+              <iframe width="100%" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Sanpada%2C%20Sector%2013%2C%20Navi%20Mumbai%2C%20Maharashtra%2C%20India&key=AIzaSyCFcywxqQCSP_xedCNJiRQRsPUqt_viJ8I" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Contact Us -->
+
+    <!-- QuickNav -->
+    <div id="QuickNavBar">
+      <div class="container-fluid">
+        <div class="row center">
+          <hr>
+          <ul id="QuickNav">
+            <li><a href="#">Home</a></li> |
+            <li><a href="companyProfile.html">Company Profile</a></li> |
+            <li><a href="companyProfile.html">Vision & Mission </a></li> |
+            <li><a href="jobs.html">Current Jobs </a></li> |
+            <li><a href="jobs.html">Post Skills </a></li> |
+            <li><a href="postRequirement.html">Post Job Requirement </a></li> |
+            <li><a href="#contact-us">Contact Us </a></li> |
+            <li><a href="#contact-us">Enquiry</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /QuickNav -->
+    <!-- Footer -->
+    <div id="footer" data-ng-mouseover="viewServiceSubmenu='false'">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 col-sm-12 col-xs-12" style="padding:10px;">
+            <span class="white" style="font-size:20px;">ABOUT US</span>
+            <hr style="border-color: #0077B5;">
+            <div class="row" style="text-align:justify;padding:0px 30px 0px 30px">
+              Spark Consultancy, recruit new talent for open positions in the workforce also provide a wide range of Recruitment Solutions for various requirements. Team of Spark Consultancy is expertise in respected fields. With an experience of serving industries like Manufacturing Industries, Pharmaceutical Industries, IT Industries, Insurance, Facility management etc,..
+            </div>
+            <div class="row" style="text-align:justify;padding:20px 30px 0px 30px">
+              <p><b>Visitor No. {{views}}</b></p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12" style="padding:10px">
+            <span class="white" style="font-size:20px;">INFORMATION</span>
+            <hr style="border-color: #0077B5;">
+            <div class="row left">
+              <div class="col-md-9 col-md-offset-2">
+                <p class="footerColor" ng-click="setActiveServicesTab('staffing')">&gt<a href="services.html" id="footerInformationContent">Staffing Solution</a>
+                <p class="footerColor" ng-click="setActiveServicesTab('facility')">&gt<a href="services.html" id="footerInformationContent">Facility Management Services</a>
+                <p class="footerColor" ng-click="setActiveServicesTab('realEstate')">&gt<a href="services.html" id="footerInformationContent">Real Estate Consultant</a>
+                <p class="footerColor" ng-click="setActiveServicesTab('events')">&gt<a href="services.html" id="footerInformationContent">Event Management Services</a>
+                <!-- <p class="footerColor">&gt<a href="login.html" id="footerInformationContent">Login</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-12 col-xs-12" style="padding:10px">
+            <div class="row">
+              <span class="white" style="font-size:20px;">CONTACT INFO</span>
+              <hr style="border-color: #0077B5;">
+            </div>
+            <div class="row" style="padding:5px;">
+              <div class="col-md-2 col-sm-2 col-xs-2 center">
+                <i class="material-icons" id="contactFormIcons">place</i>
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 left">
+                Shop No. 07, Ground Floor, 1:1, <br />Hare Krishna CHS Ltd., Sector-13, <br/> Sanpada, Navi Mumbai, India
+              </div>
+            </div>
+            <div class="row" style="padding:5px;">
+              <div class="col-md-2 col-sm-2 col-xs-2 center">
+                <i class="material-icons" id="contactFormIcons">call</i>
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 left">
+                 S.Choudhary, (+91) 8454034443
+                 I. Mukherjee, (+91) 9699008987
+              </div>
+            </div>
+            <!-- <div class="row" style="padding:5px;">
+              <div class="col-md-2 col-sm-2 col-xs-2 center">
+                <i class="material-icons" id="contactFormIcons">email</i>
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-10 left">
+                support@manpower.com
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row center">
+              <ul id="footerSocialMediaIcons">
+                <li><a href="https://www.facebook.com/brumesolutions/" target="_blank"><i class="fa fa-facebook-official" style="color:#4867AA" aria-hidden="true"></i></a></li>
+                <li><a href="https://in.linkedin.com/in/brume-solutions-a1999a128" target="_blank"><i class="fa fa-linkedin-square" style="color:#0077B5" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus-square" style="color:#D94835" aria-hidden="true"></i></a></li>
+              </ul>
+              <!-- Social Media Icons -->
+              <!-- /Social Media Icons -->
+            </div>
+          </div>
+          <div class="col-md-4">
+            <span>Copyright 2017 @ Spark Consultancy Services</span>
+          </div>
+          <div class="col-md-4">
+            Managed By <a href="https://brumesolutions.com" target="_blank">Brume Solutions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Footer -->
+
+    <!-- Scrollers -->
+    <div id="scrollToBottom" onclick="window.scrollTo(0,document.body.scrollHeight);">Bottom</div>
+    <div id="scrollToTop" onclick="window.scrollTo(0,0);">Top</div>
+    <script>
+      //Scroll Detector
+      window.onscroll = function() {myFunction()};
+      document.getElementById("scrollToTop").style.visibility = "hidden";
+      document.getElementById("scrollToBottom").style.visibility = "hidden";
+      function myFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          document.getElementById("scrollToTop").style.visibility = "visible";
+          document.getElementById("scrollToBottom").style.visibility = "visible";
+        } else {
+          document.getElementById("scrollToTop").style.visibility = "hidden";
+          document.getElementById("scrollToBottom").style.visibility = "hidden";
+        }
+      }
+    </script>
+
+    <script>
+      function signOut() {
+         var auth2 = gapi.auth2.getAuthInstance();
+         auth2.signOut().then(function () {
+           console.log('User signed out.');
+         });
+       }
+
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId());
+        console.log('Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+
+      }
+      </script>
+  </body>
+</html>
