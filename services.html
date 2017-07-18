@@ -60,7 +60,7 @@
       <div class="row">
         <div class="myTopNavBar">
           <div class="col-md-2 col-sm-4 col-xs-4" style="text-align:center;">
-            <img src="img/logo.jpg" alt="Brume Solutions" style="width:75%;height:100px;"/>
+            <img src="img/logo.jpg" alt="Brume Solutions" style="width:100%;height:125px;"/>
           </div>
           <div class="col-md-6 col-md-offset-4 col-sm-8 col-xs-8" style="text-align:right;">
             <div class="row" style="padding:0px;">
@@ -77,6 +77,7 @@
               <div class="showInMobileScreen" style="padding:5px 15px 0px 5px;" data-ng-click="toggleMobileMenu()"><i class="material-icons" id="mobileMenuIcon">menu</i></div>
               <ul id="myTopNavBarMenu" class="hideInMobileScreen">
                 <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
+                <a href="companyProfile.html" data-ng-mouseover="viewServiceSubmenu='false'"><li>OUR PROFILE</li></a>
                 <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>OUR SERVICES</li></a>
                 <a href="index.html#contact-us" data-ng-mouseover="viewServiceSubmenu='false'"><li>CONTACT US</li></a>
               </ul>
@@ -98,6 +99,7 @@
         <div class="center" data-ng-show="mobileMenu=='active'">
           <ul id="navSubmenu">
             <a href="index.html#" ng-click="toggleMobileMenu()"><li>HOME</li></a>
+            <a href="companyProfile.html" ng-click="toggleMobileMenu()"><li>OUR PROFILE</li></a>
             <a href="index.html#services" ng-click="toggleMobileMenu()"><li>SERVICES</li></a>
             <a href="services.html"><li ng-click="setActiveServicesTab('staffing')">STAFFING SOLUTION</li></a>
             <a href="services.html"><li ng-click="setActiveServicesTab('facility')">FACILITY MANAGEMENT SERVICES</li></a>
@@ -111,7 +113,7 @@
     <!-- /Navbar -->
 
     <!-- Overlapse the Fixed navbar -->
-    <div style="height:100px;background-color:white;"></div>
+    <div style="height:115px;background-color:white;"></div>
     <!-- /Overlapse the Fixed navbar -->
 
     <div id="serviceDetail" data-ng-controller="ServicesController" style="background:url(img/bg1.jpg);background-size:cover;">
@@ -201,7 +203,7 @@
           <div class="col-md-4 col-sm-12 col-xs-12" style="padding:10px">
             <span class="white" style="font-size:20px;">ABOUT US</span>
             <hr style="border-color: #0077B5;">
-            <div class="row" style="text-align:justify;padding:0px 30px 0px 30px">
+            <div class="row" style="text-align:left;padding:0px 30px 0px 30px">
               Spark Consultancy, recruit new talent for open positions in the workforce also provide a wide range of Recruitment Solutions for various requirements. Team of Spark Consultancy is expertise in respected fields. With an experience of serving industries like Manufacturing Industries, Pharmaceutical Industries, IT Industries, Insurance, Facility management etc,..
             </div>
             <div class="row" style="text-align:justify;padding:20px 30px 0px 30px">
@@ -238,19 +240,21 @@
               <div class="col-md-2 col-sm-2 col-xs-2 center">
                 <i class="material-icons" id="contactFormIcons">call</i>
               </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 left">
-                 S.Choudhary, (+91) 8454034443
-                 I. Mukherjee, (+91) 9699008987
+              <div class="col-md-5 col-sm-5 col-xs-5">
+                S.Choudhary <br /> (+91) 8454034443
+              </div>
+              <div class="col-md-5 col-sm-5 col-xs-5">
+                I. Mukherjee <br /> (+91) 9699008987
               </div>
             </div>
-            <!-- <div class="row" style="padding:5px;">
+            <div class="row" style="padding:5px;">
               <div class="col-md-2 col-sm-2 col-xs-2 center">
                 <i class="material-icons" id="contactFormIcons">email</i>
               </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 left">
-                support@manpower.com
+              <div class="col-md-10 col-sm-10 col-xs-10">
+                info@sparkconsultancyweb.com
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
         <div class="row">
@@ -277,8 +281,8 @@
     <!-- /Footer -->
 
     <!-- Scrollers -->
-    <div id="scrollToBottom" onclick="window.scrollTo(0,document.body.scrollHeight);">Bottom</div>
-    <div id="scrollToTop" onclick="window.scrollTo(0,0);">Top</div>
+    <div id="scrollToBottom" onclick="window.scrollTo(0,document.body.scrollHeight);" style="background-color:#2196F3;color:white;border-radius:50%;"><i class="fa fa-fw fa-angle-down pullRight" style="font-size:18px;"></i></div>
+    <div id="scrollToTop" onclick="window.scrollTo(0,0);" style="background-color:#2196F3;color:white;border-radius:50%;"><i class="fa fa-fw fa-angle-up pullRight" style="font-size:18px;"></i></div>
     <script>
       //Scroll Detector
       window.onscroll = function() {myFunction()};
