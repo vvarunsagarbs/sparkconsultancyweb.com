@@ -185,7 +185,7 @@
                   </div>
                   <div class="row" style="padding:2px;">
                     <div class="col-md-4" style="padding:10px;">
-                      <p><b>Gender</b></p>
+                      <p><b>Gender</b> <span style="color:red;">*</span></p>
                     </div>
                     <div class="col-md-8">
                       <input type="radio" name="gender" ng-model="resumeForm.gender" value="Male" ng-checked> Male
@@ -219,7 +219,7 @@
                   </div>
                   <div class="row" style="padding:2px;">
                     <div class="col-md-4" style="padding:10px;">
-                      <p><b>Job Function</b></p>
+                      <p><b>Job Function</b> <span style="color:red;">*</span></p>
                     </div>
                     <div class="col-md-8">
                       <input id="requirement-form-inputs" type="text" ng-model="resumeForm.jobFunction" placeholder="" required>
@@ -230,13 +230,17 @@
                       <p><b>Experience</b> <span style="color:red">*</span></p>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-3">
-                      <input id="requirement-form-inputs" type="number" ng-model="resumeForm.expYr" placeholder="" required>
+                      <select id="requirement-form-inputs" ng-model="resumeForm.expYr" placeholder="" required>
+                        <option ng-repeat="yr in listYr" value="{{yr}}">{{yr}}</option>
+                      </select>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-3" style="padding:10px;">
                       <p><b>Years</b></p>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-3">
-                      <input id="requirement-form-inputs" type="number" ng-model="resumeForm.expMon" placeholder="" required>
+                      <select id="requirement-form-inputs" ng-model="resumeForm.expYr" placeholder="" required>
+                        <option ng-repeat="mon in listMon" value="{{mon}}">{{mon}}</option>
+                      </select>
                     </div>
                     <div class="col-md-2 col-sm-3 col-xs-3" style="padding:10px;">
                       <p><b>Months</b></p>

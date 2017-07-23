@@ -237,8 +237,11 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
 
 });
 
-app.controller('JobsController', function($scope, $rootScope, $http) {
+app.controller('JobsController', function($scope, $rootScope, $http, $timeout) {
   //console.log('JobsController');
+  $scope.listYr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+  $scope.listMon = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+
   $scope.addNewSkills = function (resumeForm) {
     //console.log('resumeForm');
     $http.get($rootScope.getIpURL).then(function(res) {
@@ -259,6 +262,9 @@ app.controller('JobsController', function($scope, $rootScope, $http) {
       $http.get($scope.addNewSkillsURL).then(function(res){
         $scope.resumeResponse = res;
         $scope.resumeForm = {};
+        $setTimeout(function () {
+          window.location.href='index.html';  
+        }, 100);
         // if(res.data.status == 'S'){
         //    alert('Message Sent Successfully');
         //    window.location.reload();
