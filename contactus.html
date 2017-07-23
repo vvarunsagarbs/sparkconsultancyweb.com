@@ -78,9 +78,9 @@
             <div class="row">
               <div class="showInMobileScreen" style="padding:5px 15px 0px 5px;" data-ng-click="toggleMobileMenu()"><i class="material-icons" id="mobileMenuIcon">menu</i></div>
               <ul id="myTopNavBarMenu" class="hideInMobileScreen">
-                <a href="#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
+                <a href="index.html#" data-ng-mouseover="viewServiceSubmenu='false'"><li>HOME</li></a>
                 <a href="companyProfile.html" data-ng-mouseover="viewServiceSubmenu='false'"><li>COMPANY PROFILE</li></a>
-                <a href="#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>SERVICES</li></a>
+                <a href="index.html#services" data-ng-mouseover="viewServiceSubmenu='true'"><li>SERVICES</li></a>
                 <a href="contactus.html" data-ng-mouseover="viewServiceSubmenu='false'"><li>CONTACT US</li></a>
               </ul>
             </div>
@@ -117,147 +117,88 @@
     <!-- Overlapse the Fixed navbar -->
     <div style="height:115px;background-color:white;"></div>
     <!-- /Overlapse the Fixed navbar -->
-    <!-- Home Slider -->
-      <iframe class="homeSlider" frameborder="0" style="border:0" src="lib/slider/standard.html" allowfullscreen data-ng-mouseover="viewServiceSubmenu='false'"></iframe>
-    <!-- /Home Slider -->
 
-    <!-- Services -->
-    <div id="services" style="padding:50px 0px 50px 0px;background: url('img/bg.jpg'); background-size:cover;" data-ng-mouseover="viewServiceSubmenu='false'">
+    <!-- Contact Us -->
+    <div id="contact-us" style="background: url('img/bg1.jpg'); background-size:cover;" data-ng-mouseover="viewServiceSubmenu='false'">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-10 col-md-offset-1 div-header" style="color:white"> OUR SERVICES</div>
-        </div>
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <div class="row" style="background-color:white;" ng-mouseleave="setActiveServiceSwtichView('default')">
+          <div class="col-md-10 col-md-offset-1" style="padding:10px;">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1 div-header" style="color:white">CONTACT US</div>
+            </div>
+            <div class="row" style="padding:10px;">
               <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="row" style="background-color:#2196F3">
-                  <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4" style="border-bottom:1px solid white;background-color:white;padding:10px;" ng-mouseover="setActiveServiceSwtichView('staffing')">
-                    <img src="img/services/1.jpg" alt="Staffing Solutions" style="border-radius:50%;width:100%;height:150px;" ng-hide="activeServiceSwtichView == 'staffing'"/>
-                    <a href="services.html"><div style="height:150px;background-color:#2196F3;border-radius:50%;padding:50px;text-align:center;color:white;" ng-show="activeServiceSwtichView == 'staffing'" ng-click="setActiveServicesTab('staffing')"> LEARN MORE </div></a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 col-sm-4 col-xs-4" style="border-right:1px solid white;padding:10px;" ng-mouseover="setActiveServiceSwtichView('facility')">
-                    <img src="img/services/2.jpg" alt="Facility Management Services" style="border-radius:50%;width:100%;height:150px;" ng-hide="activeServiceSwtichView == 'facility'"/>
-                    <a href="services.html"><div style="height:150px;background-color:#2196F3;border-radius:50%;padding:50px;text-align:center;color:white;" ng-show="activeServiceSwtichView == 'facility'" ng-click="setActiveServicesTab('facility')"> LEARN MORE </div></a>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-4" style="background-color:#2196F3;color:white;padding:40px;">
-                    <b>Spark Consultancy Solutions</b><br><i>Hover Over the Images to know more.</i>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-4" style="border-left:1px solid white;padding:10px;" ng-mouseover="setActiveServiceSwtichView('realEstate')">
-                    <img src="img/services/3.jpg" alt="Real Estate Consultant" style="border-radius:50%;width:100%;height:150px;" ng-hide="activeServiceSwtichView == 'realEstate'"/>
-                    <a href="services.html"><div style="height:150px;background-color:#2196F3;border-radius:50%;padding:50px;text-align:center;color:white;" ng-show="activeServiceSwtichView == 'realEstate'" ng-click="setActiveServicesTab('realEstate')"> LEARN MORE </div></a>
-                  </div>
-                </div>
-                <div class="row" style="background-color:#2196F3;">
-                  <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4" style="background-color:white;border-top:1px solid white;padding:10px;" ng-mouseover="setActiveServiceSwtichView('events')">
-                    <img src="img/services/4.jpg" alt="Event Management System" style="border-radius:50%;width:100%;height:150px;" ng-hide="activeServiceSwtichView == 'events'"/>
-                    <a href="services.html"><div style="height:150px;background-color:#2196F3;border-radius:50%;padding:50px;text-align:center;color:white;" ng-show="activeServiceSwtichView == 'events'" ng-click="setActiveServicesTab('events')"> LEARN MORE </div></a>
-                  </div>
-                </div>
+                <!-- Google Maps -->
+                <iframe class="hideInMobileScreen" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Sanpada%2C%20Sector%2013%2C%20Navi%20Mumbai%2C%20Maharashtra%2C%20India&key=AIzaSyCFcywxqQCSP_xedCNJiRQRsPUqt_viJ8I" allowfullscreen></iframe>
+                <!-- Google Maps -->
               </div>
-              <div class="col-md-6 hideInMobileScreen" style="padding:10px 20px 10px 20px;background-color:#2196F3;">
-                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'default'">
-                  <p><b>Spark Consultancy Services</b></p>
-                  <p>Spark Consultancy, recruit new talent for open positions in the workforce also provide a wide range of Recruitment Solutions for various requirements. Team of Spark Consultancy is expertise in respected fields. With an experience of serving industries like Manufacturing Industries, Pharmaceutical Industries, IT Industries, Insurance, Facility management etc,..</p>
-                </div>
-                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'staffing'">
-                  <p><b>Staffing Solutions</b></p>
-                  <p>Get all manpower at one place for your business and fill your organization with full of talent who help in growing your organization to the next level</p>
-                </div>
-                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'facility'">
-                  <p><b>Facility Management Services</b></p>
-                  <p>Need people for housekeeping or managing other utilities for your organization ? Spark Consultancy help you bring them in no time.</p>
-                  <p>Our Facility Management Services include:</p>
-                  <ul>
-                    <li>Painting</li>
-                    <li>Masonry/civil</li>
-                    <li>Carpentry</li>
-                    <li>Plumbing</li>
-                    <li>Polishing</li>
-                    <li>Electrical repairs</li>
-                    <li>Tiles fixing</li>
-                    <li>Water proofing</li>
-                  </ul>
-                </div>
-                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'realEstate'">
-                  <p><b>Real Estate Consultant</b></p>
-                  <p>Backed by a skilled team of professionals, we offer comprehensive Real Estate Solutions to the clients all over the nation. Being a trusted Real Estate Consultant, we specialize in serving the clients with Buying Property, Selling Property, Leasing Property, and Renting Property.</p>
-                  <p>Be it Commercial or Residential Property, we can help the clients with suitable solutions. Working as a mediator, we assist the clients with the premium solutions and offer them the offer that best caters their requirements.</p>
-                </div>
-                <div style="padding:20px;border:1px solid #2196F3;height:522px;background-color:white;" ng-show="activeServiceSwtichView == 'events'">
-                  <p><b>Event Management Services</b></p>
-                  <p>Need resources to manage events like cultural, IT, business seminars or Bollywood. Spark consultancy help you providing hustle free management in your budget.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1 div-header" style="background-color:white;color:black;"> Industries We Serve</div>
-        </div>
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1" style="background-color:white;padding:10px;">
-            <iframe class="industriesScroller" height="180px;" frameborder="0" style="border:0" src="lib/slider0/standard.html" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /Services -->
-
-    <!-- JobsPreview -->
-    <div id="jobs" style="padding:50px 0px 50px 0px;" data-ng-mouseover="viewServiceSubmenu='false'">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-12 col-xs-12 showInMobileScreen">
-            <div class="col-sm-4 col-xs-4">
-              <a href=""><img src="img/currentopenings2.png" alt="Current Jobs" /></a>
-            </div>
-            <div class="col-sm-4 col-xs-4">
-              <a href=""><img src="img/postresume2.png" alt="Post Resume" /></a>
-            </div>
-            <div class="col-sm-4 col-xs-4">
-              <a href="services.html"><img src="img/employersection2.png" alt="Post Requirement" /></a>
-            </div>
-          </div>
-          <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-            <div class="col-md-4 hideInMobileScreen center">
-              <div class="row" style="padding:10px;">
-                <a href="jobs.html"><img src="img/currentopenings2.png" alt="Current Jobs" /></a>
-              </div>
-              <div class="row" style="padding:10px;">
-                <a href="jobs.html"><img src="img/postresume2.png" alt="Post Resume" /></a>
-              </div>
-              <div class="row" style="padding:10px;">
-                <a href="services.html"><img src="img/employersection2.png" alt="Post Requirement" /></a>
-              </div>
-            </div>
-            <div class="col-md-8" style="padding:5px 5px 5px 5px;box-shadow:0px 2px 4px grey;background-color:white;">
-              <div class="container-fluid">
-                <div class="row" style="height:420px;">
-                  <h5 style="text-align:center;">FEATURE JOBS</h5>
-                  <hr style="border-color:#0077B5">
-                  <marquee direction="up" scrolldelay="100" height="340">
-                    <div class="container-fluid">
-                      <div ng-repeat="featureJob in FeaturesJobs" style="padding:0px 30px 0px 30px;">
-                        <div class="row">
-                          <div class="col-md-10">
-                            <p><span><b>{{featureJob.title}}, </b></span>({{featureJob.exp}}) Yrs - {{featureJob.city}}</p>
-                          </div>
-                          <!-- <hr style="border-color:grey;"> -->
-                        </div>
-                      </div>
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:0px 20px 0px 20px;background-color:rgba(255,255,255,0.8);">
+              <div class="row">
+                <p id="heading-text" style="text-align:center;">GET IN TOUCH</p>
+                <form name="contactForm">
+                  <div class="alert alert-success" ng-show="enquiryResponse.data.status=='S'">
+                    <strong>Success!</strong> Your message has been received successfully, please check your inbox for confirmation mail.
+                  </div>
+                  <div class="alert alert-danger" ng-show="enquiryResponse.data.status=='N'">
+                    <strong>Sorry!</strong> Some Error Occured, Please Try Again!
+                  </div>
+                  <div class="row" style="padding:10px;">
+                    <div class="col-md-6" style="padding:10px;">
+                      <input id="contact-form-inputs" type="text" ng-model="contactForm.name" placeholder="Name" required>
                     </div>
-                  </marquee>
+                    <div class="col-md-6" style="padding:10px;">
+                      <input id="contact-form-inputs" type="text" ng-model="contactForm.email" placeholder="Email" required>
+                    </div>
+                  </div>
+                  <div class="row" style="padding:5px;">
+                    <div class="col-md-12">
+                      <textarea id="contact-form-inputs" rows="3" style="width:100%;" ng-model="contactForm.message" placeholder="Message" required></textarea>
+                    </div>
+                  </div>
+                  <div class="row" style="padding:10px;text-align:right">
+                    <button id="contactFormSubmitButton" ng-click="addNewEnquiry(contactForm)">Send Message</button>
+                  </div>
+                </form>
+              </div>
+              <div class="row hideInMobileScreen" style="padding:5px 15px 5px 15px;">
+                <div class="row" style="padding:5px;">
+                  <div class="col-md-2 col-sm-2 col-xs-2 center">
+                    <i class="material-icons" id="contactFormIcons">place</i>
+                  </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                    Shop No. 07, Ground Floor, 1:1, <br />Hare Krishna CHS Ltd., Sector-13, <br/> Sanpada, Navi Mumbai, India
+                  </div>
+                </div>
+                <div class="row" style="padding:5px;">
+                  <div class="col-md-2 col-sm-2 col-xs-2 center">
+                    <i class="material-icons" id="contactFormIcons">call</i>
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    S.Choudhary <br /> (+91) 8454034443
+                  </div>
+                  <div class="col-md-5 col-sm-5 col-xs-5">
+                    I. Mukherjee <br /> (+91) 9699008987
+                  </div>
+                </div>
+                <div class="row" style="padding:5px;">
+                  <div class="col-md-2 col-sm-2 col-xs-2 center">
+                    <i class="material-icons" id="contactFormIcons">email</i>
+                  </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                    info@sparkconsultancyweb.com
+                  </div>
                 </div>
               </div>
+            </div>
+            </div>
+            <div class="row showInMobileScreen" style="padding:10px;">
+              <iframe width="100%" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Sanpada%2C%20Sector%2013%2C%20Navi%20Mumbai%2C%20Maharashtra%2C%20India&key=AIzaSyCFcywxqQCSP_xedCNJiRQRsPUqt_viJ8I" allowfullscreen></iframe>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- /JobsPreview -->
+    <!-- /Contact Us -->
 
     <!-- QuickNav -->
     <div id="QuickNavBar">
@@ -271,8 +212,8 @@
             <li><a href="jobs.html">Current Jobs </a></li> |
             <li><a href="jobs.html">Post Resume </a></li> |
             <li><a href="postRequirement.html">Post Job Requirement </a></li> |
-            <li><a href="contactus.html">Contact Us </a></li> |
-            <li><a href="contactus.html">Enquiry</a></li>
+            <li><a href="#contact-us">Contact Us </a></li> |
+            <li><a href="#contact-us">Enquiry</a></li>
           </ul>
         </div>
       </div>

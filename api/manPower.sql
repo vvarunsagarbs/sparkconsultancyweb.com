@@ -63,16 +63,20 @@ CREATE TABLE `requirements` (
   PRIMARY KEY(`id`)
 )
 CREATE TABLE `resume` (
-  `id`       		int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name`  				    varchar(50) NOT NULL,
-  `gender`       		varchar(1) NOT NULL,
-  `email_id`       		varchar(100) NOT NULL,
-  `city`           varchar(50) DEFAULT NULL,
-  `mobile`    			  varchar(10) DEFAULT NULL,
-  `key_skills`      		varchar(256) NOT NULL,
-  `resume`      		varchar(256) NOT NULL,
-  `CRTD_DT`       		datetime NOT NULL,
-  `CRTD_IP`       		varchar(39) NOT NULL,
-  `DEL_FLG`       		char(1) NOT NULL,
+  `id` int(4) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `gender` varchar(1) NOT NULL,
+  `email_id` varchar(100) NOT NULL,
+  `city` varchar(50) DEFAULT NULL,
+  `mobile` varchar(10) DEFAULT NULL,
+  `job_function` varchar(150) NOT NULL,
+  `exp_yr` int(3) NOT NULL,
+  `exp_mon` int(3) NOT NULL,
+  `current_work_location` varchar(150) NOT NULL,
+  `key_skills` varchar(256) NOT NULL,
+  `resume` varchar(256) NOT NULL,
+  `CRTD_DT` datetime NOT NULL,
+  `CRTD_IP` varchar(39) NOT NULL,
+  `DEL_FLG` char(1) NOT NULL,
   PRIMARY KEY(`id`)
 )

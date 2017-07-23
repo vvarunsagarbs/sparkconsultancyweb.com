@@ -146,7 +146,7 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
   $scope.fetchViews();
 
 
-  $scope.FeaturesJobs = [{"title":"Sales& Marketing Profile", "exp" : "1 to 5", "city": "Navi Mumbai"},{"title":"Receptionist", "exp" : "1 to 5", "city": " Navi Mumbai"},{"title":"Personal Assistant", "exp" : "2 to 8", "city": "Navi Mumbai"},{"title":"Accounts & Purchase Profile", "exp" : "3 to 8", "city": "Navi Mumbai"}];
+  $scope.FeaturesJobs = [{"title":"Sales& Marketing Profile", "exp" : "1 to 5", "city": "Mumbai/Navi Mumbai"},{"title":"Receptionist", "exp" : "1 to 5", "city": " Mumbai/Navi Mumbai"},{"title":"Personal Assistant", "exp" : "2 to 8", "city": "Mumbai/Navi Mumbai"},{"title":"Accounts & Purchase Profile", "exp" : "3 to 8", "city": "Mumbai/Navi Mumbai"}];
 
   $scope.setActiveServiceSwtichView = function (view){
     $scope.activeServiceSwtichView = view;
