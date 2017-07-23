@@ -250,6 +250,10 @@ app.controller('JobsController', function($scope, $rootScope, $http) {
                                                                                 '&email=' + resumeForm.email +
                                                                                 '&city=' + resumeForm.city +
                                                                                 '&phone=' + resumeForm.phone +
+                                                                                '&jobFunction=' + resumeForm.jobFunction +
+                                                                                '&expYe=' + resumeForm.expYr +
+                                                                                '&expMon=' + resumeForm.expMon +
+                                                                                '&currentWorkLocation=' + resumeForm.currentWorkLocation +
                                                                                 '&skills=' + resumeForm.skills;
       //console.log($scope.addNewSkillsURL);
       $http.get($scope.addNewSkillsURL).then(function(res){
