@@ -58,7 +58,7 @@
 				$headers .= "MIME-Version: 1.0\r\n";
 				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $email_admin_body = "<html><body>";
-        $email_admin_body .= "Dear Sir,<br> We received a resume from <strong>Mr.".$name."</strong>, The job seeker data is as follows<table style='width:100%''>";
+        $email_admin_body .= "Dear Sir,<br> We received a resume from <strong>Mr.".$name."</strong>, The job seeker data is as follows<table>";
         $email_admin_body .= "<tr><th> <strong> Name </strong> </th><td>".$name."</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Gender </strong> </th><td>".$gender."</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Email </strong> </th><td>".$email."</td></tr>";
@@ -68,7 +68,7 @@
         $email_admin_body .= "<tr><th> <strong> Experience </strong> </th><td>".$expYr."years,".$expMon." months.</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Work Location </strong> </th><td>".$currentWorkLocation."</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Skills </strong> </th><td>".$skills."</td></tr>";
-        
+
         $email_admin_body .='</table></body></html>';
 				mail($email,$email_subject,$email_body,$headers);
         mail($config['to_email'], $email_subject, $email_admin_body, $headers);

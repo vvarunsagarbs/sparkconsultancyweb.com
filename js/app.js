@@ -171,7 +171,7 @@ app.controller('ServicesController', function($scope,$rootScope,$http) {
                                                                                 '&phone=' + requirementForm.phone +
                                                                                 '&enquiry=' + requirementForm.enquiry +
                                                                                 '&address=' + requirementForm.address +
-                                                                                '&sector=' + $rootScope.activeServicesTab;
+                                                                                '&sector=' + requirementForm.sector;
       //console.log($scope.addNewRequirementURL);
       $http.get($scope.addNewRequirementURL).then(function(res){
         $scope.requirementResponse = res;
