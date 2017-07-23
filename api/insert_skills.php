@@ -3,15 +3,12 @@
   include_once 'config.php';
 
   $page='insert_skills.php';
-  $status = 'no Entry';
   if($_GET['ip'] && $_GET['name'] && $_GET['gender'] && $_GET['email'] && $_GET['city'] && $_GET['phone'] && $_GET['skills']) {
-    echo "passed if";
     try {
       $dbc = new PDO("mysql:host=$server;dbname=$db", $config['username'], $config['password']);
       // set the PDO error mode to exception
       $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $message = 'DB Connected Successfully';
-      echo $message;
       } catch(PDOException $e) {
       $message = 'Connection Error';
       goto message;
