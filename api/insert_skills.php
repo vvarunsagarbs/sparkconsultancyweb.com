@@ -29,56 +29,55 @@
     $del_flg = 'N';
 
 
-    // Send mail
-      $email_subject = "Your Enquiry - Reg";
-      $email_body = "<html><body>";
-      $email_body .= "Dear ".$person.",<br> We received your Resume, Thank you for contacting us. We will reach you soon regarding your query.<br><br><strong>Thanks and Regards</strong><br>ABC Private Limited";
-      $email_body .='</body></html>';
-      $headers = $config["from_email"]. "\r\n";
-      $headers .= "MIME-Version: 1.0\r\n";
-      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-      $email_admin_body = "<html><body>";
-      $email_admin_body .= "Dear Sir,<br> We received a requirement from <strong>Mr.".$name."</strong>, The client requirement is as follows \n";
-      $email_admin_body .= "<table style='text-align:left;'><tr><th> <strong> Contact Name </strong> </th><td>".$name."</td></tr>";
-      $email_admin_body .= "<tr><th> <strong> Email Address </strong> </th><td>".$email."</td></tr>";
-      $email_admin_body .= "<tr><th> <strong> Gender </strong> </th><td>".$gender."</td></tr>";
-      $email_admin_body .= "<tr><th> <strong> City </strong> </th><td>".$city."</td></tr>";
-      $email_admin_body .= "<tr><th> <strong> Phone </strong> </th><td>".$phone."</td></tr>";
-      $email_admin_body .= "<tr><th> <strong> Job Function </strong> </th><td>".$jobFunction."</td></tr>";
-      $email_admin_body .= "<tr><th> <strong> Experience </strong> </th><td>".$expYr." years ".$expMon." months</td></tr>";
-      $email_admin_body .= "<tr><th> <strong> Current Work Location </strong> </th><td>".$currentWorkLocation."</td></tr>";
-      $email_admin_body .= "<tr><th> <strong> Skills </strong> </th><td>".$skills."</td></tr>";
-      $email_admin_body .='</table></body></html>';
+    $insertNewResume = "INSERT INTO `resume`(`name`, `gender`, `email_id`, `city`, `mobile`, `job_function`, `exp_yr`, `exp_mon`, `current_work_location`, `key_skills`, `CRTD_DT`, `CRTD_IP`, `DEL_FLG`) VALUES (:name,:gender,:email,:city,:phone,:jobFunction,:expYr,:expMon,:currentWorkLocation,:skills,NOW(3),:ip,:del_flg)";
 
-      echo $email_admin_body;
+    $query = $dbc->prepare($insertNewResume);
+    $query->bindParam(":name", $name);
+    $query->bindParam(":gender", $gender);
+    $query->bindParam(":email", $email);
+    $query->bindParam(":city", $city);
+    $query->bindParam(":phone", $phone);
+    $query->bindParam(":jobFunction", $jobFunction);
+    $query->bindParam(":expYr", $expYr);
+    $query->bindParam(":expMon", $expMon);
+    $query->bindParam(":currentWorkLocation", $currentWorkLocation);
+    $query->bindParam(":skills", $skills);
+    $query->bindParam(":ip", $ip);
+    $query->bindParam(":del_flg", $del_flg);
 
-      mail($email,$email_subject,$email_body,$headers);
-      mail($config['to_email'], $email_subject, $email_admin_body, $headers);
+    if ($query->execute()) {
+      $status = 'S';
+      $last_id = $dbc->lastInsertId();
 
+      // Send mail
+        $email_subject = "Your Enquiry - Reg";
+        $email_body = "<html><body>";
+        $email_body .= "Dear ".$person.",<br> We received your Resume, Thank you for contacting us. We will reach you soon regarding your query.<br><br><strong>Thanks and Regards</strong><br>Spark Consultancy";
+        $email_body .='</body></html>';
+        $headers = $config["from_email"]. "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $email_admin_body = "<html><body>";
+        $email_admin_body .= "Dear Sir,<br> We received a resume from <strong>Mr.".$name."</strong>, The client requirement is as follows \n";
+        $email_admin_body .= "<table style='text-align:left;'><tr><th> <strong> Contact Name </strong> </th><td>".$name."</td></tr>";
+        $email_admin_body .= "<tr><th> <strong> Email Address </strong> </th><td>".$email."</td></tr>";
+        $email_admin_body .= "<tr><th> <strong> Gender </strong> </th><td>".$gender."</td></tr>";
+        $email_admin_body .= "<tr><th> <strong> City </strong> </th><td>".$city."</td></tr>";
+        $email_admin_body .= "<tr><th> <strong> Phone </strong> </th><td>".$phone."</td></tr>";
+        $email_admin_body .= "<tr><th> <strong> Job Function </strong> </th><td>".$jobFunction."</td></tr>";
+        $email_admin_body .= "<tr><th> <strong> Experience </strong> </th><td>".$expYr." years ".$expMon." months</td></tr>";
+        $email_admin_body .= "<tr><th> <strong> Current Work Location </strong> </th><td>".$currentWorkLocation."</td></tr>";
+        $email_admin_body .= "<tr><th> <strong> Skills </strong> </th><td>".$skills."</td></tr>";
+        $email_admin_body .='</table></body></html>';
 
-    // $insertNewResume = "INSERT INTO `resume`(`name`, `gender`, `email_id`, `city`, `mobile`, `job_function`, `exp_yr`, `exp_mon`, `current_work_location`, `key_skills`, `CRTD_DT`, `CRTD_IP`, `DEL_FLG`) VALUES (:name,:gender,:email,:city,:phone,:jobFunction,:expYr,:expMon,:currentWorkLocation,:skills,NOW(3),:ip,:del_flg)";
-    //
-    // $query = $dbc->prepare($insertNewResume);
-    // $query->bindParam(":name", $name);
-    // $query->bindParam(":gender", $gender);
-    // $query->bindParam(":email", $email);
-    // $query->bindParam(":city", $city);
-    // $query->bindParam(":phone", $phone);
-    // $query->bindParam(":jobFunction", $jobFunction);
-    // $query->bindParam(":expYr", $expYr);
-    // $query->bindParam(":expMon", $expMon);
-    // $query->bindParam(":currentWorkLocation", $currentWorkLocation);
-    // $query->bindParam(":skills", $skills);
-    // $query->bindParam(":ip", $ip);
-    // $query->bindParam(":del_flg", $del_flg);
-    //
-    // if ($query->execute()) {
-    //   $status = 'S';
-    //   $last_id = $dbc->lastInsertId();
-    //
-    // } else {
-    //   $status = 'N';
-    // }
+        // echo $email_admin_body;
+
+        mail($email,$email_subject,$email_body,$headers);
+        mail($config['to_email'], $email_subject, $email_admin_body, $headers);
+
+    } else {
+      $status = 'N';
+    }
   }
   message:
    echo '{"page":"'.$page.'","status":"'.$status.'"}';

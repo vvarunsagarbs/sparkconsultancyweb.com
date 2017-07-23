@@ -251,7 +251,7 @@ app.controller('JobsController', function($scope, $rootScope, $http) {
                                                                                 '&city=' + resumeForm.city +
                                                                                 '&phone=' + resumeForm.phone +
                                                                                 '&jobFunction=' + resumeForm.jobFunction +
-                                                                                '&expYe=' + resumeForm.expYr +
+                                                                                '&expYr=' + resumeForm.expYr +
                                                                                 '&expMon=' + resumeForm.expMon +
                                                                                 '&currentWorkLocation=' + resumeForm.currentWorkLocation +
                                                                                 '&skills=' + resumeForm.skills;

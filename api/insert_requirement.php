@@ -47,7 +47,7 @@
       // Send mail
         $email_subject = "Your Enquiry - Reg";
 				$email_body = "<html><body>";
-				$email_body .= "Dear ".$person.",<br> We received your Requirement, Thank you for contacting us. We will reach you soon regarding your query.<br><br><strong>Thanks and Regards</strong><br>ABC Private Limited";
+				$email_body .= "Dear ".$person.",<br> We received your Requirement, Thank you for contacting us. We will reach you soon regarding your query.<br><br><strong>Thanks and Regards</strong><br>Spark Consultancy";
 				$email_body .='</body></html>';
 				$headers = $config["from_email"]. "\r\n";
 				$headers .= "MIME-Version: 1.0\r\n";
