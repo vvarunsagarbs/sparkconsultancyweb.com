@@ -54,16 +54,16 @@
 				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $email_admin_body = "<html><body>";
         $email_admin_body .= "Dear Sir,<br> We received a requirement from <strong>Mr.".$person."</strong>, The client requirement is as follows \n";
-        $email_admin_body .= "<table><tr><th> <strong> Contact Name </strong> </th><td>".$person."</td></tr>";
-        $email_admin_body .= "<tr><th> <strong> Email Address </strong> </th><td>".$email."</td></tr>";
-        $email_admin_body .= "<table><tr><th> <strong> Phone </strong> </th><td>".$phone."</td></tr>";
-        $email_admin_body .= "<tr><th> <strong> Company Name </strong> </th><td>".$companyName."</td></tr>";
-        $email_admin_body .= "<table><tr><th> <strong> Sector </strong> </th><td>".$sector."</td></tr>";
-        $email_admin_body .= "<tr><th> <strong> City </strong> </th><td>".$city."</td></tr>";
-        $email_admin_body .= "<tr><th> <strong> Enquiry </strong> </th><td>".$enquiry."</td></tr>";
-        $email_admin_body .= "<tr><th> <strong> Address </strong> </th><td>".$address."</td></tr>";
+        $email_admin_body .= "<strong> Contact Name </strong> : ".$person."\n";
+        $email_admin_body .= "<strong> Email Address </strong> : ".$email."\n";
+        $email_admin_body .= "<strong> Phone </strong> : ".$phone."\n";
+        $email_admin_body .= "<strong> Company Name </strong> : ".$companyName."\n";
+        $email_admin_body .= "<strong> Sector </strong> : ".$sector."\n";
+        $email_admin_body .= "<strong> City </strong> : ".$city."\n";
+        $email_admin_body .= "<strong> Enquiry </strong> : ".$enquiry."\n";
+        $email_admin_body .= "<strong> Address </strong> : ".$address."\n";
 
-        $email_admin_body .='</table></body></html>';
+        $email_admin_body .='</body></html>';
 
 				mail($email,$email_subject,$email_body,$headers);
         mail($config['to_email'], $email_subject, $email_admin_body, $headers);
