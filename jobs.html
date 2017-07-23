@@ -188,8 +188,8 @@
                       <p><b>Gender</b></p>
                     </div>
                     <div class="col-md-8">
-                      <input type="radio" name="gender" ng-model="resumeForm.gender" value="m" ng-checked> Male
-                      <input type="radio" name="gender" ng-model="resumeForm.gender" value="f"> Female
+                      <input type="radio" name="gender" ng-model="resumeForm.gender" value="Male" ng-checked> Male
+                      <input type="radio" name="gender" ng-model="resumeForm.gender" value="Female"> Female
                    </div>
                   </div>
                   <div class="row" style="padding:2px;">
@@ -227,27 +227,27 @@
                   </div>
                   <div class="row" style="padding:2px;">
                     <div class="col-md-4" style="padding:10px;">
-                      <p><b>Experience</b></p>
+                      <p><b>Experience</b> <span style="color:red">*</span></p>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-sm-3 col-xs-3">
                       <input id="requirement-form-inputs" type="number" ng-model="resumeForm.expYr" placeholder="" required>
                     </div>
-                    <div class="col-md-2" style="padding:10px;">
+                    <div class="col-md-2 col-sm-3 col-xs-3" style="padding:10px;">
                       <p><b>Years</b></p>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 col-sm-3 col-xs-3">
                       <input id="requirement-form-inputs" type="number" ng-model="resumeForm.expMon" placeholder="" required>
                     </div>
-                    <div class="col-md-2" style="padding:10px;">
+                    <div class="col-md-2 col-sm-3 col-xs-3" style="padding:10px;">
                       <p><b>Months</b></p>
                     </div>
                   </div>
                   <div class="row" style="padding:2px;">
                     <div class="col-md-4" style="padding:10px;">
-                      <p><b>Current Work Location</b></p>
+                      <p><b>Current Work Location</b> <span style="color:red">*</span></p>
                     </div>
                     <div class="col-md-8">
-                      <input id="requirement-form-inputs" type="text" ng-model="resumeForm.currentJobLocation" placeholder="" required>
+                      <input id="requirement-form-inputs" type="text" ng-model="resumeForm.currentWorkLocation" placeholder="" required>
                     </div>
                   </div>
                   <div class="row" style="padding:2px;">

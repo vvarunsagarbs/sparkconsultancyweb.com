@@ -2,14 +2,16 @@
   header('Access-Control-Allow-Origin: *');
   include_once 'config.php';
 
-  $page='insert_visitors.php';
-
+  $page='insert_skills.php';
+  $status = 'no Entry';
   if($_GET['ip'] && $_GET['name'] && $_GET['gender'] && $_GET['email'] && $_GET['city'] && $_GET['phone'] && $_GET['skills']) {
+    echo "passed if";
     try {
       $dbc = new PDO("mysql:host=$server;dbname=$db", $config['username'], $config['password']);
       // set the PDO error mode to exception
       $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $message = 'DB Connected Successfully';
+      echo $message;
       } catch(PDOException $e) {
       $message = 'Connection Error';
       goto message;
@@ -28,7 +30,7 @@
     $resume = 'N';
     $del_flg = 'N';
 
-    $insertNewSkills = "INSERT INTO `resume`(`name`, `gender`, `email_id`, `city`, `mobile`, `job_function`, `exp_yr`, `exp_mon`, `current_work_location`, `key_skills`, `resume`, `CRTD_DT`, `CRTD_IP`, `DEL_FLG`) VALUES (:name,:gender,:email,:city,:phone,:jobFunction,:expYr,:expMon,:currentWorkLocation,:skills,:resume,NOW(3),:ip,:del_flg)";
+    $insertNewSkills = "INSERT INTO `resume`(`name`, `gender`, `email_id`, `city`, `mobile`, `job_function`, `exp_yr`, `exp_mon`, `current_work_location`, `key_skills`, `CRTD_DT`, `CRTD_IP`, `DEL_FLG`) VALUES (:name,:gender,:email,:city,:phone,:jobFunction,:expYr,:expMon,:currentWorkLocation,:skills,NOW(3),:ip,:del_flg)";
 
     $query = $dbc->prepare($insertNewSkills);
     $query->bindParam(":name", $name);
@@ -41,7 +43,7 @@
     $query->bindParam(":expMon", $expMon);
     $query->bindParam(":currentWorkLocation", $currentWorkLocation);
     $query->bindParam(":skills", $skills);
-    $query->bindParam(":resume", $resume);
+    // $query->bindParam(":resume", $resume);
     $query->bindParam(":ip", $ip);
     $query->bindParam(":del_flg", $del_flg);
 
@@ -58,7 +60,7 @@
 				$headers .= "MIME-Version: 1.0\r\n";
 				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $email_admin_body = "<html><body>";
-        $email_admin_body .= "Dear Sir,<br> We received a resume from <strong>Mr.".$name."</strong>, The job seeker data is as follows";
+        $email_admin_body .= "Dear Sir,<br> We received a resume from <strong>Mr.".$name."</strong>, The job seeker data is as follows \n";
         $email_admin_body .= "<table style='text-align:left;'><tr><th> <strong> Name </strong> </th><td>".$name."</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Gender </strong> </th><td>".$gender."</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Email </strong> </th><td>".$email."</td></tr>";
@@ -68,8 +70,8 @@
         $email_admin_body .= "<tr><th> <strong> Experience </strong> </th><td>".$expYr."years,".$expMon." months.</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Work Location </strong> </th><td>".$currentWorkLocation."</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Skills </strong> </th><td>".$skills."</td></tr>";
+        $email_admin_body .="</table></body></html>";
 
-        $email_admin_body .='</table></body></html>';
 				mail($email,$email_subject,$email_body,$headers);
         mail($config['to_email'], $email_subject, $email_admin_body, $headers);
 
