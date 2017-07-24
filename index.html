@@ -241,10 +241,16 @@
                   <marquee direction="up" scrolldelay="100" height="340">
                     <div class="container-fluid">
                       <div ng-repeat="featureJob in FeaturesJobs" style="padding:0px 30px 0px 30px;">
-                        <div class="row">
-                          <div class="col-md-10">
-                            <p><span><b>{{featureJob.title}}, </b></span>({{featureJob.exp}}) Yrs - {{featureJob.city}}</p>
+                        <div class="row" style="-webkit-flex: 1; /* Safari 6.1+ */-ms-flex: 1; /* IE 10 */flex: 1;">
+                          <div class="col-md-3">
+                            <img src="img/comingsoon.jpg" style="width:100%" alt="commingsoon"/>
                           </div>
+                          <div class="col-md-9" style="padding:40px;">
+                            <p style="color:black;">We are Coming Soon...</p>
+                          </div>
+                          <!-- <div class="col-md-10">
+                            <p><span><b>{{featureJob.title}}, </b></span>({{featureJob.exp}}) Yrs - {{featureJob.city}}</p>
+                          </div> -->
                           <!-- <hr style="border-color:grey;"> -->
                         </div>
                       </div>
