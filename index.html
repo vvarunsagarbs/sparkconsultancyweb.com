@@ -224,7 +224,7 @@
           <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
             <div class="col-md-4 hideInMobileScreen center">
               <div class="row" style="padding:10px;">
-                <a href="jobs.html"><img src="img/currentopenings2.png" alt="Current Jobs" /></a>
+                <a><img src="img/currentopenings2.png" alt="Current Jobs" /></a>
               </div>
               <div class="row" style="padding:10px;">
                 <a href="jobs.html"><img src="img/postresume2.png" alt="Post Resume" /></a>
@@ -242,16 +242,16 @@
                     <div class="container-fluid">
                       <div ng-repeat="featureJob in FeaturesJobs" style="padding:0px 30px 0px 30px;">
                         <div class="row" style="-webkit-flex: 1; /* Safari 6.1+ */-ms-flex: 1; /* IE 10 */flex: 1;">
-                          <div class="col-md-3">
+                          <!-- <div class="col-md-3">
                             <img src="img/comingsoon.jpg" style="width:100%" alt="commingsoon"/>
                           </div>
                           <div class="col-md-9" style="padding:40px;">
                             <p style="color:black;">We are Coming Soon...</p>
-                          </div>
-                          <!-- <div class="col-md-10">
-                            <p><span><b>{{featureJob.title}}, </b></span>({{featureJob.exp}}) Yrs - {{featureJob.city}}</p>
                           </div> -->
-                          <!-- <hr style="border-color:grey;"> -->
+                          <div class="col-md-10">
+                            <p><span><b>{{featureJob.title}}, </b></span>({{featureJob.exp}}) Yrs - {{featureJob.city}}</p>
+                            <hr style="border-color:grey;">
+                          </div>
                         </div>
                       </div>
                     </div>
