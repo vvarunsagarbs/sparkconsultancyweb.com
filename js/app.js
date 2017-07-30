@@ -244,8 +244,11 @@ app.controller('JobsController', function($scope, $rootScope, $http, $timeout) {
 
   $scope.addNewSkills = function (resumeForm) {
     //console.log('resumeForm');
+    $scope.resumeForm = resumeForm;
+    $scope.resumeForm.resume = window.localStorage['resume'];
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
+
       //console.log('ip',$rootScope.ip);
       $scope.addNewSkillsURL = $rootScope.server + 'insert_skills.php?ip=' + $rootScope.ip +
                                                                                 '&name=' + resumeForm.name +
@@ -257,13 +260,14 @@ app.controller('JobsController', function($scope, $rootScope, $http, $timeout) {
                                                                                 '&expYr=' + resumeForm.expYr +
                                                                                 '&expMon=' + resumeForm.expMon +
                                                                                 '&currentWorkLocation=' + resumeForm.currentWorkLocation +
-                                                                                '&skills=' + resumeForm.skills;
+                                                                                '&skills=' + resumeForm.skills
+                                                                                '&resume=' + resumeForm.resume;
       //console.log($scope.addNewSkillsURL);
       $http.get($scope.addNewSkillsURL).then(function(res){
         $scope.resumeResponse = res;
         $scope.resumeForm = {};
         $setTimeout(function () {
-          window.location.href='index.html';  
+          window.location.href='index.html';
         }, 100);
         // if(res.data.status == 'S'){
         //    alert('Message Sent Successfully');
