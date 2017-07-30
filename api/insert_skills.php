@@ -26,7 +26,6 @@
     $currentWorkLocation = $_GET['currentWorkLocation'];
     $skills = $_GET['skills'];
     $ip = $_GET['ip'];
-    $resume = $_GET['resume'];
     $del_flg = 'N';
 
 
@@ -69,7 +68,6 @@
         $email_admin_body .= "<tr><th> <strong> Experience </strong> </th><td>".$expYr." years ".$expMon." months</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Current Work Location </strong> </th><td>".$currentWorkLocation."</td></tr>";
         $email_admin_body .= "<tr><th> <strong> Skills </strong> </th><td>".$skills."</td></tr>";
-        $email_admin_body .= "<tr><th> <strong> Resume </strong> </th><td> <a href='".$resume."'>".$name"_Resume </a></td></tr>";
         $email_admin_body .='</table></body></html>';
 
         // echo $email_admin_body;

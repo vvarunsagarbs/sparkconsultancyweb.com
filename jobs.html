@@ -268,7 +268,7 @@
                     </div>
                     <input type="hidden" name="MAX_FILE_SIZE" value="1024" />
                     <div class="col-md-8">
-                      <input type="file" ng-model="resumeForm.resume" onchange="encodeImageFileAsURL(this)" />
+                      <input type="file" ng-model="resumeForm.resume" />
                       <span style="font-size:12px;">Only Word, Text, RTF, HTML, PDF or ODT files of up to 1024 KB</span>
                     </div>
                   </div>
@@ -404,18 +404,7 @@
         }
       }
     </script>
-    <script>
-    function encodeImageFileAsURL(element) {
-      var file = element.files[0];
-      var reader = new FileReader();
-      reader.onloadend = function() {
-        console.log('RESULT', reader.result)
-        window.localStorage['resume'] = reader.result;
-        console.log('local',window.localStorage['resume']);
-      }
-      reader.readAsDataURL(file);
-    }
-    </script>
+
     <script>
       function signOut() {
          var auth2 = gapi.auth2.getAuthInstance();

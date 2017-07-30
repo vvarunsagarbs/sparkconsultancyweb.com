@@ -244,8 +244,6 @@ app.controller('JobsController', function($scope, $rootScope, $http, $timeout) {
 
   $scope.addNewSkills = function (resumeForm) {
     //console.log('resumeForm');
-    $scope.resumeForm = resumeForm;
-    $scope.resumeForm.resume = window.localStorage['resume'];
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
 
